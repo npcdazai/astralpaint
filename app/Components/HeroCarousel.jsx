@@ -35,20 +35,32 @@ export default function HeroCarousel() {
 
   return (
     <div className="relative w-full h-[87vh] overflow-hidden after:absolute after:inset-0 after:bg-[#0003]">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-all duration-700 ease-in-out transform ${index === current ? 'translate-x-0 opacity-100 z-0' : index < current ? '-translate-x-full opacity-0 z-[-1]' : 'translate-x-full opacity-0 z-[-1]'}`}
-        >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            className="object-cover scale-110"
-            priority={index === 0}
-          />
-        </div>
-      ))}
+      <div className="absolute inset-0 overflow-hidden">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <div 
+              className="absolute inset-0 will-change-transform" 
+              style={{
+                animation: index === current ? 'bgPanHorizontal 10s linear infinite alternate' : 'none',
+              }}
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                className="object-cover scale-[1.1]"
+                priority={index === 0}
+                quality={90}
+              />
+            </div>
+          </div>
+        ))}
+        <div className="absolute inset-0  bg-opacity-30" />
+      </div>
+
 
       <div className="relative z-10 flex flex-col justify-center h-full pl-12 text-white max-w-[50%] ">
         <h1
