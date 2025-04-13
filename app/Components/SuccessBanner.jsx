@@ -3,7 +3,7 @@ import successssBanner from "../images/becomeadealer.jpg";
 
 const SuccessBanner = ({homepage}) => {
     return (
-        <div className="relative w-full h-[350px]">
+        <div className="relative w-full h-[300px]">
             <Image
                 src={successssBanner}
                 alt="Become a dealer"
@@ -20,7 +20,7 @@ const SuccessBanner = ({homepage}) => {
                     Lorem ipsum dolor sit amet consectetur. Integer dui quam nisi in ornare. 
                     Nec in tristique et ultrices sit ullamcorper massa tempor et.
                 </p>
-                <button className="bg-white text-black font-semibold px-6 py-2 rounded-full hover:bg-gray-200 transition">
+                <button className="bg-white text-black font-semibold px-6 py-2 text-sm rounded-full hover:bg-gray-200 transition">
                     Read More
                 </button>
             </div>
