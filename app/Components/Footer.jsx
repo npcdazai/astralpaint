@@ -45,6 +45,11 @@ const Footer = () => {
         }}
         className="text-white py-16"
       >
+
+        <div>
+          
+        </div>
+
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between gap-12">
             {/* Left Section: Logo + Info */}
