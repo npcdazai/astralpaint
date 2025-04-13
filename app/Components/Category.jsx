@@ -22,12 +22,11 @@ const Category = ({ homepage }) => {
                                 alt="orange-underline"
                                 width={120}
                                 height={8}
-                                // className="absolute -right-24 bottom-0"
                             />
                         </div>
                     </div>
                     <div  >
-                    <ServicesGrid homepage={homepage} />
+                        <ServicesGrid homepage={homepage} />
                     </div>
                 </div>
             </div>

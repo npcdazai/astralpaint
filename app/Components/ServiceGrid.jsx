@@ -12,7 +12,7 @@ const ServicesGrid = ({ homepage }) => {
                     <img
                         src={featured.image.node.sourceUrl}
                         alt={featured.title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                     {/* Overlay */}
                     <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between
@@ -40,7 +40,7 @@ const ServicesGrid = ({ homepage }) => {
                         <img
                             src={service.image.node.sourceUrl}
                             alt={service.title}
-                            className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+                            className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
                         />
                         <div className="absolute bottom-0 left-0 right-0 p-4 z-20 flex backdrop-blur-md transition-all duration-500 bg-transparent hover:bg-[#ff9119aa]">
                             <h3 className="text-white font-semibold text-sm md:text-base">
