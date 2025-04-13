@@ -29,7 +29,7 @@ const arr = [
 
 const Service = ({ homepage }) => {
     return (
-        <div className="bg-gradient-to-b from-[#e70000] via-[#ff6600] to-[#ffa500] pl-2">
+        <div className="bg-gradient-to-b from-[#ffa500] via-yellow-300 to-lime-200 pl-2">
             <div className="bg-white py-16 px-[4rem]">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12 flex flex-col items-start">

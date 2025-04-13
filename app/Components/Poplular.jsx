@@ -1,85 +1,64 @@
-// 'use client';
-// import React from 'react';
-// import redmark from "../images/lineOrange.svg";
-// import Image from 'next/image';
-// import ServicesGrid from './ServiceGrid';
+'use client';
+import React from 'react';
+import redmark from "../images/lineOrange.svg";
+import Image from 'next/image';
+import ServicesGrid from './ServiceGrid';
 
-// const colors = [
-//     { color: "#F9DCB4", isHighlighted: false },
-//     { color: "#FAC7C3", isHighlighted: false },
-//     { color: "#00C6E6", isHighlighted: false },
-//     { color: "#005BAA", isHighlighted: false },
-//     { color: "#760101", isHighlighted: true },
-//     { color: "#F0A623", isHighlighted: false },
-// ];
+export function ColorCard({ title, colourInfo }) {
+    const code = colourInfo?.selectColor || '#000000';
+    const brand = "Astral Paints";
 
+    return (
+        <div className="group text-center p-2 h-[250px] rounded-md transition duration-300 hover:rounded-2xl hover:drop-shadow-2xl hover:bg-white hover:scale-105">
+            
+            {brand && (
+                <div className="hidden group-hover:block font-semibold text-gray-600 pb-2 ">
+                    {brand}
+                </div>
+            )}
 
-// function ColorCard({ color, name, code, isHighlighted }) {
-//     return (
-//         <div
-//             className={`flex flex-col items-center justify-center p-4 ${isHighlighted ? "shadow-2xl rounded-xl scale-105 bg-white" : ""
-//                 }`}
-//         >
-//             <div
-//                 className={`w-40 h-40 border-4 ${isHighlighted ? "border-white" : "border"
-//                     }`}
-//                 style={{ backgroundColor: color }}
-//             />
-//             {isHighlighted && <p className="font-bold mt-2">Astral Paints</p>}
-//             <p className="mt-2 font-semibold">Colour Name</p>
-//             <p className="text-sm text-gray-500">Colour Code</p>
-//         </div>
-//     );
-// }
+            <div className={`w-[150px] h-[155px] border-2 bg-[${code}] p-1`}>
+                <div className="w-[140px] h-[144px] border-2 border-white" />
+            </div>
 
+            <div className="font-medium text-gray-600">Colour Name</div>
+            <div className="text-sm text-gray-600">{code}</div>
+        </div>
 
-
-
-// const Poplular = ({ homepage }) => {
-//     return (
-//         <div className="bg-gradient-to-b from-[#e70000] via-[#ff6600] to-[#ffa500] pl-2">
-//             <div className="bg-white py-16 px-[4rem]">
-//                 <div className="max-w-7xl mx-auto">
-//                     <div className="text-center mb-12 flex flex-col items-start "  >
-//                         <h5 className="text-lg font-bold text-gray-950 mb-2">
-//                             Colours
-//                         </h5>
-//                         <div className="relative inline-flex items-center justify-center gap-4 ">
-//                             <h2 className="text-3xl font-bold text-black mb-2">
-//                                 Popular Colours
-//                             </h2>
-//                             <Image
-//                                 src={redmark}
-//                                 alt="orange-underline"
-//                                 width={120}
-//                                 height={8}
-//                             />
-//                         </div>
-//                     </div>
-//                     <div className="flex space-x-4">
-//                         {/* {homepage.allColourCategory.map((c, index) => ( */}
-//                         <ColorCard
-//                             // key={index}
-//                             color={homepage.allColourCategory.nodes.colours.nodes.colourInfo.selectColor}
-//                             isHighlighted={c.isHighlighted}
-//                         />
-//                         {/* ))} */}
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Poplular;
-
-
-import React from 'react'
-
-const Poplular = () => {
-  return (
-    <div>Poplular</div>
-  )
+    );
 }
 
-export default Poplular
+const Poplular = ({ colours }) => {
+    const colorsList = colours?.[0]?.colours?.nodes || [];
+    return (
+        <div className="bg-gradient-to-b from-lime-200 to-green-600 pl-2">
+            <div className="bg-white pb-16 px-[4rem]">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-12 flex flex-col items-start "  >
+                        <h5 className="text-lg font-bold text-gray-950 mb-2">
+                            Colours
+                        </h5>
+                        <div className="relative inline-flex items-center justify-center gap-4 ">
+                            <h2 className="text-3xl font-bold text-black mb-2">
+                                Popular Colours
+                            </h2>
+                            <Image
+                                src={redmark}
+                                alt="orange-underline"
+                                width={120}
+                                height={8}
+                            />
+                        </div>
+                    </div>
+                    <div className="flex flex-wrap items-center justify-center gap-6 p-10">
+                        {colorsList.map((color, idx) => (
+                            <ColorCard key={idx} {...color} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Poplular;

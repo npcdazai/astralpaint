@@ -5,6 +5,8 @@ import { fetchHomepageData } from "../lib/graphql";
 import Category from "./Components/Category";
 import Service from "./Components/Service";
 import Poplular from "./Components/Poplular";
+import SuccessBanner from "./Components/SuccessBanner";
+import Blog from "./Components/Blog";
 
 async function getData() {
   const data = await fetchHomepageData();
@@ -24,7 +26,9 @@ export default async function Home() {
       <About homepage={homepage} />
       <Category homepage={homepage} />
       <Service homepage={homepage} />
-      <Poplular homepage={homepage} />
+      <Poplular colours={colours} />
+      <SuccessBanner homepage={homepage} />
+      <Blog blogs={blogs} />
     </main>
   );
 }
