@@ -22,13 +22,27 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen">
+      <div id="hero">
       <HeroCarousel homepage={homepage} />
-      <About homepage={homepage} />
-      <Category homepage={homepage} />
-      <Service homepage={homepage} />
-      <Poplular colours={colours} />
-      <SuccessBanner homepage={homepage} />
-      <Blog blogs={blogs} />
+      </div>
+      <div id="about">
+        <About homepage={homepage} />
+      </div>
+      <div id="category">
+        <Category homepage={homepage} />
+      </div>
+      <div id="service">
+        <Service homepage={homepage} />
+      </div>
+      <div id="colours">
+        <Poplular colours={colours} />
+      </div>
+      <div id="dealer">
+        <SuccessBanner homepage={homepage} />
+      </div>
+      <div id="blogs">
+        <Blog blogs={blogs} />
+      </div>
     </main>
   );
 }

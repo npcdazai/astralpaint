@@ -3,7 +3,8 @@ import successssBanner from "../images/becomeadealer.jpg";
 
 const SuccessBanner = ({homepage}) => {
     return (
-        <div className="relative w-full h-[300px]">
+       <div className="bg-green-600  pl-2">
+         <div className="relative w-full h-[300px]">
             <Image
                 src={successssBanner}
                 alt="Become a dealer"
@@ -25,6 +26,7 @@ const SuccessBanner = ({homepage}) => {
                 </button>
             </div>
         </div>
+       </div>
     );
 };
 

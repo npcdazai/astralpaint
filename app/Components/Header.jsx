@@ -1,52 +1,39 @@
+'use client';
 import Image from 'next/image'
 import React from 'react'
 import astralpaint from "../../public/astralpaint.svg"
+
 
 const navlink = [
     {
         id: 1,
         navName: "About",
-        link: "/"
+        link: "#about"
     },
     {
         id: 2,
         navName: "Category",
-        link: "/"
+        link: "#category"
     },
     {
         id: 3,
         navName: "Service",
-        link: "/"
+        link: "#service"
     },
     {
         id: 4,
-        navName: "Service",
-        link: "/"
+        navName: "Colours",
+        link: "#colours"
     },
     {
         id: 5,
-        navName: "Colours",
-        link: "/"
+        navName: "Become A Dealer",
+        link: "#dealer"
     },
     {
         id: 6,
-        navName: "Downloads",
-        link: "/"
-    },
-    {
-        id: 7,
-        navName: "Become A Dealer",
-        link: "/"
-    },
-    {
-        id: 8,
         navName: "Blogs",
-        link: "/"
-    },
-    {
-        id: 9,
-        navName: "Contacts",
-        link: "/"
+        link: "#blogs"
     }
 ]
 
@@ -59,7 +46,20 @@ const Header = () => {
             <Image src={astralpaint} height="45px" alt='astral-paint' />
             <div className="flex gap-5 items-center">
                 {navlink.map((nav) => (
-                    <p key={nav.id} className='text-sm font-[600] cursor-pointer '>{nav.navName}</p>
+                    <a 
+                        key={nav.id} 
+                        href={nav.link} 
+                        className='text-sm font-[600] cursor-pointer hover:text-gray-200 transition-colors'
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.querySelector(nav.link);
+                            if (element) {
+                                element.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }}
+                    >
+                        {nav.navName}
+                    </a>
                 ))}
                 <button className='bg-white rounded-4xl p-3 px-6 text-xs font-semibold text-[#0060af]'>
                     Enquire Now
